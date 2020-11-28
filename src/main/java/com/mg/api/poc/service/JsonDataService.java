@@ -23,7 +23,7 @@ public class JsonDataService implements IJsonData {
 
     /**
      * Load Data Method
-     * to load the data from the HttpClient URL
+     * To load the data from the HttpClient URL
      * @param url HTTP client URL
      * @return String from the URL by resttempalte
      */
@@ -36,6 +36,7 @@ public class JsonDataService implements IJsonData {
 
     /**
      * Load Data By Filters Method
+     * To load the data by using the applicable filters
      * @param generes property
      * @param directors property
      * @param rating property
@@ -49,7 +50,8 @@ public class JsonDataService implements IJsonData {
     }
 
     /**
-     * Load Data By Id to view Details JsonData Object
+     * Load Data By Id Method
+     * To load the detail data of JsonData Obj by Id
      * @param id property
      * @return JsonData Object
      */

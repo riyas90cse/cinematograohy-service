@@ -17252,4 +17252,6 @@ com.mg.api.poc.controller.JsonDataController#loadDataByFilter(String) mapped.
 ""2020-11-29 [http-nio-9000-exec-1]INFO o.s.web.servlet.DispatcherServlet -Completed initialization in 6 ms
 ""2020-11-29 [http-nio-9000-exec-2]INFO c.m.a.p.c.JsonDataController -Opening Load Data Method
 ""2020-11-29 [http-nio-9000-exec-2]INFO c.mg.api.poc.service.JsonDataService -Retrieving Data from HTTP URL
+""2020-11-29 [SpringContextShutdownHook]INFO org.ehcache.core.EhcacheManager -Cache 'jsonData' removed from EhcacheManager.
+""2020-11-29 [SpringContextShutdownHook]INFO o.s.s.c.ThreadPoolTaskExecutor -Shutting down ExecutorService 'applicationTaskExecutor'
 "
