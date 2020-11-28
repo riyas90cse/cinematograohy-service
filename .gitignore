@@ -20,3 +20,4 @@ bin-release/
 # information for Eclipse / Flash Builder.
 /target/
 /app.log.*
+/app.log
