@@ -25,7 +25,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
  */
 @Configuration
 @EnableSwagger2
-public class Swagger2Config implements AbstractSwaggerConfig {
+public class SwaggerConfig {
 
     /**
      * @return docket
@@ -52,7 +52,6 @@ public class Swagger2Config implements AbstractSwaggerConfig {
      * Meta Data Method
      * @return apiinfo
      */
-    @Override
     public ApiInfo metaData() {
         return new ApiInfoBuilder()
                 .title("MG POC REST API")
@@ -62,6 +61,27 @@ public class Swagger2Config implements AbstractSwaggerConfig {
                 .licenseUrl(null)
                 .version("1.0.0")
                 .build();
+    }
+
+    /**
+     * @return Security Context
+     */
+    public SecurityContext securityContext() {
+        return SecurityContext.builder()
+                .securityReferences(defaultAuth())
+                .forPaths(PathSelectors.any())
+                .build();
+    }
+
+    /**
+     * To define the Defaulth Authentication
+     * @return List of Security Reference
+     */
+    private List<SecurityReference> defaultAuth() {
+        final AuthorizationScope authorizationScope =
+                new AuthorizationScope("global", "accessEverything");
+        final AuthorizationScope[] authorizationScopes = new AuthorizationScope[]{authorizationScope};
+        return Collections.singletonList(new SecurityReference("Bearer", authorizationScopes));
     }
 
 }

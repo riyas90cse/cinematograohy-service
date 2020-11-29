@@ -12,10 +12,9 @@ public interface IJsonData {
 
    /**
     * Load Data from Json Method
-    * @param url uri
     * @return String
     */
-   String loadData(String url);
+   String loadData();
 
    /**
     * Filter Method

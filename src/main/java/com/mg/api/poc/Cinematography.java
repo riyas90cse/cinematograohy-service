@@ -9,10 +9,10 @@ import org.springframework.cache.annotation.EnableCaching;
  */
 @EnableCaching(proxyTargetClass = true)
 @SpringBootApplication
-public class MgPocApplication {
+public class Cinematography {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MgPocApplication.class, args);
+		SpringApplication.run(Cinematography.class, args);
 	}
 
 }
