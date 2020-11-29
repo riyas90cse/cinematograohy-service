@@ -12,6 +12,6 @@ public class DataCacheListener implements CacheEventListener<String, List<JsonDa
 
     @Override
     public void onEvent(CacheEvent<? extends String, ? extends List<JsonData>> cacheEvent) {
-        LOG.info("Event '{}' fired for key '{}' with value {}", cacheEvent.getType(), cacheEvent.getKey(), cacheEvent.getNewValue());
+        LOG.info("Event '{}' fired for key '{}' with value {}", cacheEvent.getType(), cacheEvent.getKey(), "New Value Executed");
     }
 }
