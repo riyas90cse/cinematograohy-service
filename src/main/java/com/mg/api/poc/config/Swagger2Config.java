@@ -44,7 +44,7 @@ public class Swagger2Config implements AbstractSwaggerConfig {
                 .title("MG POC REST API")
                 .description("API Specification For MG POC APPLICATION")
                 .contact(new Contact("Mohamed Riyas", "https://example.com", "riyas90cse@gmail.com"))
-                .license("Commercial")
+                .license("Open Source")
                 .licenseUrl(null)
                 .version("1.0.0")
                 .build();
