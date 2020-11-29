@@ -10,6 +10,10 @@ import lombok.ToString;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * Video Object
+ * @author Mohamed Riyas
+ */
 @Getter
 @Setter
 @ToString

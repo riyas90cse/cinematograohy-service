@@ -10,6 +10,10 @@ import lombok.ToString;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * ViewingWindow Object
+ * @author Mohamed Riyas
+ */
 @Getter
 @Setter
 @ToString

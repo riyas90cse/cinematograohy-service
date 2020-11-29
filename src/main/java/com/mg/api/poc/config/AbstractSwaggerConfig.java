@@ -15,6 +15,9 @@ import java.util.List;
  */
 public interface AbstractSwaggerConfig {
 
+    /**
+     * @return Security Context
+     */
     default SecurityContext securityContext() {
         return SecurityContext.builder()
                 .securityReferences(defaultAuth())
@@ -22,6 +25,10 @@ public interface AbstractSwaggerConfig {
                 .build();
     }
 
+    /**
+     * To define the Defaulth Authentication
+     * @return List of Security Reference
+     */
     private List<SecurityReference> defaultAuth() {
         final AuthorizationScope authorizationScope =
                 new AuthorizationScope("global", "accessEverything");
@@ -29,5 +36,8 @@ public interface AbstractSwaggerConfig {
         return Collections.singletonList(new SecurityReference("Bearer", authorizationScopes));
     }
 
+    /**
+     * @return ApiInfo
+     */
     ApiInfo metaData();
 }

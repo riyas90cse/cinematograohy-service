@@ -9,6 +9,10 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * JsonData Object
+ * @author Mohamed Riyas
+ */
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"body", "cardImages", "cast", "cert", "class", "directors", "duration", "galleries", "genres", "headline",

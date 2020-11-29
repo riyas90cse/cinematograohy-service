@@ -39,11 +39,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    /**
+     * Configure Authentication Manager Builder method
+     * @param auth
+     * @throws Exception
+     */
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 
+    /**
+     * Http Security Configuration Method
+     * @param http
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
@@ -59,14 +69,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
+    /**
+     * Web Security Configuration Method
+     * @param web
+     */
     @Override
     public void configure(WebSecurity web) {
         web.ignoring().antMatchers("/swagger-ui/**", "/swagger-resources/**", "/v2/api-docs");
     }
 
+
+    /**
+     * password encoder bean
+     * @return Password Encoder
+     */
     @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+    public PasswordEncoder passwordEncoder() { return new BCryptPasswordEncoder(); }
 
 }

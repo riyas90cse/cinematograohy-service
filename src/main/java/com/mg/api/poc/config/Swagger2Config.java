@@ -19,10 +19,17 @@ import java.util.List;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 
+/**
+ * Swagger Configuration Configuration
+ * @author Mohamed Riyas
+ */
 @Configuration
 @EnableSwagger2
 public class Swagger2Config implements AbstractSwaggerConfig {
 
+    /**
+     * @return docket
+     */
     @Bean
     public Docket docket() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -35,9 +42,16 @@ public class Swagger2Config implements AbstractSwaggerConfig {
                 .apiInfo(metaData());
     }
 
+    /**
+     * @return api key
+     */
     @Bean
     public ApiKey apiKey() { return new ApiKey("Bearer", "Authorization", "header"); }
 
+    /**
+     * Meta Data Method
+     * @return apiinfo
+     */
     @Override
     public ApiInfo metaData() {
         return new ApiInfoBuilder()

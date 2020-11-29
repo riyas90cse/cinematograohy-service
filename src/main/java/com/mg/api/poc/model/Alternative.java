@@ -9,6 +9,10 @@ import lombok.ToString;
 
 import java.io.Serializable;
 
+/**
+ * Alternative Object
+ * @author Mohamed Riyas
+ */
 @Getter
 @Setter
 @ToString

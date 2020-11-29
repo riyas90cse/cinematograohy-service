@@ -11,6 +11,10 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Json Data Service
+ * @author Mohamed Riyas
+ */
 @Service
 @Log4j2
 public class JsonDataService implements IJsonData {
