@@ -28,6 +28,10 @@ public class MainConfig {
         return executor;
     }
 
+    /**
+     * RestTemplate Bean Registration
+     * @return RestTempalte
+     */
     @Bean
     public RestTemplate getRestTemplate() {
         return new RestTemplate();

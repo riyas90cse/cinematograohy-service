@@ -101,5 +101,4 @@ public class JsonData implements Serializable {
     @JsonProperty(value = "year")
     private String year;
 
-
 }

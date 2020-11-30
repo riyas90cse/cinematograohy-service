@@ -54,8 +54,8 @@ public class SwaggerConfig {
      */
     public ApiInfo metaData() {
         return new ApiInfoBuilder()
-                .title("MG POC REST API")
-                .description("API Specification For MG POC APPLICATION")
+                .title("Cinematography POC REST API")
+                .description("API Specification For Cinematography Application")
                 .contact(new Contact("Mohamed Riyas", "https://example.com", "riyas90cse@gmail.com"))
                 .license("Open Source")
                 .licenseUrl(null)
