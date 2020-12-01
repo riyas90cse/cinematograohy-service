@@ -80,7 +80,10 @@ public class JsonDataController {
      * Clear Cache Method
      */
     @DeleteMapping("/cache/clear")
-    public void clearCache() { jsonDataService.clearCache(); }
+    public ResponseEntity<String> clearCache() {
+        jsonDataService.clearCache();
+        return new ResponseEntity<>("Cache Cleared Successfully", HttpStatus.OK);
+    }
 
 
     /**
