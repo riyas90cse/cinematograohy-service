@@ -74,6 +74,17 @@ Response
 - String Message is Body 
 ```
 
+# Cache Images
+
+```
+Request
+
+End Point: GET - /images/{id}
+
+Response
+- Cached Image 
+```
+
 
 
 
