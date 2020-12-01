@@ -4,6 +4,6 @@ MAINTAINER Mohamed Riyas <riyas90cse@gmail.com>
 COPY cinematography-service /app/
 
 WORKDIR /app/
-RUN ./mvnw clean install -DskipTests=true
+RUN ../mvnw clean install -DskipTests=true && ../mvnw spring-boot:run
 
 ENTRYPOINT [ "/bin/bash" ]
