@@ -76,6 +76,7 @@ public class JsonDataController {
         return new ResponseEntity<>(jsonData, HttpStatus.OK);
     }
 
+
     /**
      * Clear Cache Method
      */
