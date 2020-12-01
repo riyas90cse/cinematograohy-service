@@ -2,6 +2,7 @@
 
 ### Run this one time setup
 git clone https://github.com/riyas90cse/cinematography-service.git
+
 cd devops
 sudo chmod 755 docker_setup.sh
 
