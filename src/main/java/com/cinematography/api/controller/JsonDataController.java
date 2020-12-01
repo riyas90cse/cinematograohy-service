@@ -3,7 +3,6 @@ package com.cinematography.api.controller;
 import com.cinematography.api.model.Director;
 import com.cinematography.api.model.JsonData;
 import com.cinematography.api.service.JsonDataService;
-import com.cinematography.api.util.AppUtil;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -38,9 +38,7 @@ public class JsonDataController {
     @GetMapping(value = "/data/load")
     public ResponseEntity<List<JsonData>> loadData() throws Exception {
         LOG.info("Opening Load Data Method", this.getClass().getSimpleName());
-        String data = jsonDataService.loadData();
-        List<JsonData> jsonDataList = AppUtil.getObject(data);
-        return new ResponseEntity<>(jsonDataList, HttpStatus.OK);
+        return new ResponseEntity<>(jsonDataService.loadData(), HttpStatus.OK);
     }
 
     /**
@@ -76,6 +74,17 @@ public class JsonDataController {
         return new ResponseEntity<>(jsonData, HttpStatus.OK);
     }
 
+    /**
+     * Cache Image
+     * Get Image
+     * @param id
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/images/{id}", method = RequestMethod.GET)
+    public byte[] image(@PathVariable("id") String id) throws Exception {
+        return jsonDataService.getImagesUri(id);
+    }
 
     /**
      * Clear Cache Method
@@ -98,8 +107,7 @@ public class JsonDataController {
      */
     private List<JsonData> filterByParams(String genere, String director, Long rating, String year) {
         try {
-            String data = jsonDataService.loadData();
-            List<JsonData> jsonDataList = AppUtil.getObject(data);
+            List<JsonData> jsonDataList = jsonDataService.loadData();
             List<JsonData> response = new ArrayList<>();
 
             Predicate<String> GENERE = d -> d.equalsIgnoreCase(genere);
@@ -138,8 +146,7 @@ public class JsonDataController {
      */
     private JsonData getDetailJsonDataObj(String id) {
         try {
-            String data = jsonDataService.loadData();
-            List<JsonData> jsonDataList = AppUtil.getObject(data);
+            List<JsonData> jsonDataList = jsonDataService.loadData();
             if(!StringUtils.isEmpty(id)) {
                return jsonDataList.stream().parallel().filter(jsonData -> jsonData.getId().equalsIgnoreCase(id)).findFirst().get();
             }

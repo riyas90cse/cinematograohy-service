@@ -1,9 +1,11 @@
 package com.cinematography.api.controller;
 
 import com.cinematography.api.TestConfig;
+import com.cinematography.api.model.JsonData;
 import com.cinematography.api.service.JsonDataService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -12,6 +14,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -27,24 +31,20 @@ public class JsonDataControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Autowired
-    private RestTemplate restTemplate;
-
     @MockBean
     private JsonDataService jsonDataService;
 
-    private String data;
+    @Mock
+    private List<JsonData> data;
 
-    private final String URL = "https://mgtechtest.blob.core.windows.net/files/showcase.json";
-
-    private String testLoadMockData() {
-        return this.restTemplate.getForObject(URL, String.class);
+    private List<JsonData> testLoadMockData() throws Exception {
+        data = jsonDataService.loadData();
+        return data;
     }
 
     @Test
     public void testLoadData() throws Exception {
-        data = testLoadMockData();
-        given(jsonDataService.loadData()).willReturn(data);
+        given(testLoadMockData()).willReturn(data);
         this.mockMvc.perform(get("/data/load")).andExpect(status().isOk());
     }
 
