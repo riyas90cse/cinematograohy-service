@@ -85,6 +85,14 @@ Response
 - Cached Image 
 ```
 
-
-
+# Compile, Build and Run Application
+- Go to Root Foler cinematography-service and compile & build below command
+- ./mvnw clean install
+- if u want to skip test and compile below command will be working
+- ./mvnw clean install -DskipTests=true
+- Once Application Successfully compiled 
+- to run app below uri
+- ./mvnw spring-boot:run 
+- once it runs successfuly application will run on below uri where you can see the Swagger UI for better understanding
+http://localhost:9000/swagger-ui/
 
