@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rm -rf cinematography-service
-git clone -b main https://github.com/riyas90cse/cinematograohy-service.git
+git clone -b main https://github.com/riyas90cse/cinematography-service.git
 
 rm -rf cinematography-service/.git/
 

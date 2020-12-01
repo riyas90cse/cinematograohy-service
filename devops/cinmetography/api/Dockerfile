@@ -7,4 +7,4 @@ WORKDIR /app/api/
 
 EXPOSE 9000
 
-ENTRYPOINT ../mvnw clean install -DskipTests=true
+ENTRYPOINT ./mvnw clean install -DskipTests=true
