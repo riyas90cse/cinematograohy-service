@@ -14,7 +14,7 @@
         </expiry>
         <listeners>
             <listener>
-                <class>com.mg.api.poc.util.DataCacheListener</class>
+                <class>com.cinematography.api.util.DataCacheListener</class>
                 <event-firing-mode>ASYNCHRONOUS</event-firing-mode>
                 <event-ordering-mode>ORDERED</event-ordering-mode>
                 <events-to-fire-on>CREATED</events-to-fire-on>

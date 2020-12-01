@@ -1,0 +1,16 @@
+version: '3.3'
+
+volumes:
+  app-data:
+
+services:
+  cdn-service:
+    container_name: cinematography-service
+    restart: on-failure
+    build: ./cinmetography/api/
+    env_file:
+      - cinematography-service.env
+    ports:
+      - "9000:9000"
+    volumes:
+      - app-data:/etc/cinematography/files
