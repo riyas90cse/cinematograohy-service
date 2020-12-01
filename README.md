@@ -4,7 +4,7 @@ POC Application for Cinematorgraphy
 
 # Tools & Technology Used
 
-Java 11, Apache Maven 3, GIT, Junit 5, Mockito, Rest API, Lombok, Ehcache, Swagger2, Docker, Docker Compose
+Java 11, Spring Boot, Apache Maven 3, GIT, Junit 5, Mockito, Rest API, Lombok, Ehcache, Swagger2, Docker, Docker Compose
 
 
 # Deployment Instructions
